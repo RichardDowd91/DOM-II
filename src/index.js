@@ -42,4 +42,15 @@ function zoom(event) {
   let scale = 1;
   const el = document.querySelector('.intro');
   document.onwheel = zoom;
+
+  const buttons = document.querySelectorAll('.btn')
+  buttons.forEach(button =>{
+      button.addEventListener('mouseover', () => {
+          button.style.backgroundColor = 'green'
+          button.style.color = 'white'
+      }) 
+  })
   
+  window.addEventListener('scroll', () =>{
+  console.log('Im scrolling')
+    });
