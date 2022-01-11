@@ -1,17 +1,17 @@
 import './less/index.less'
 
 // Your code goes here!
-
+// event 1
 const logo = document.querySelector('.logo-heading');
 logo.addEventListener('mouseenter', function (evt) {
     evt.target.style.color = 'purple';
 });
-
+//event 2
 const nav = document.querySelector('.nav');
 nav.addEventListener('dblclick', function(evt) {
     console.log('double click event')
 });
-
+// event 3
 const log = document.querySelector('body');
 log.addEventListener('keydown', logKey);
 
@@ -19,7 +19,7 @@ function logKey(evt) {
     console.log(log)
 }
 
-
+// event 4
 function zoom(event) {
     event.preventDefault();
   
@@ -42,7 +42,7 @@ function zoom(event) {
   let scale = 1;
   const el = document.querySelector('.intro');
   document.onwheel = zoom;
-
+// event 5
   const buttons = document.querySelectorAll('.btn')
   buttons.forEach(button =>{
       button.addEventListener('mouseover', () => {
@@ -50,7 +50,16 @@ function zoom(event) {
           button.style.color = 'white'
       }) 
   })
-  
+  //event 6
   window.addEventListener('scroll', () =>{
   console.log('Im scrolling')
     });
+// event 7
+window.addEventListener('load', ()=> {
+    alert('page loaded')
+});
+// event 8
+const footer = document.querySelector('.footer')
+footer.addEventListener('mouseleave', () => {
+    footer.style.backgroundColor = 'purple'
+})
