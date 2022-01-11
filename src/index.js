@@ -18,3 +18,28 @@ log.addEventListener('keydown', logKey);
 function logKey(evt) {
     console.log(log)
 }
+
+
+function zoom(event) {
+    event.preventDefault();
+  
+    if (event.deltaY < 0) {
+      // Zoom in
+      scale *= event.deltaY * -2;
+    }
+    else {
+      // Zoom out
+      scale /= event.deltaY * 2;
+    }
+  
+    // Restrict scale
+    scale = Math.min(Math.max(.125, scale), 4);
+  
+    // Apply scale transform
+    el.style.transform = `scale(${scale})`;
+  }
+  
+  let scale = 1;
+  const el = document.querySelector('.intro');
+  document.onwheel = zoom;
+  
