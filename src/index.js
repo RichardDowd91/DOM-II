@@ -63,3 +63,18 @@ const footer = document.querySelector('.footer')
 footer.addEventListener('mouseleave', () => {
     footer.style.backgroundColor = 'purple'
 })
+// event 9 + prevent default 
+Array.from(document.links).forEach(link => {
+    link.addEventListener('click', function(evt) {
+      evt.preventDefault();
+      console.log("GOTCHA SUCKER!");               
+    })
+})
+
+// event 10 
+function windowSize() {
+    console.log('Page height is : ', window.innerHeight);
+    console.log('Page width is : ', window.innerWidth);
+}
+window.addEventListener('resize', windowSize);
+console.log(windowSize);
